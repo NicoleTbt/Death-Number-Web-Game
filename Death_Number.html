@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="Stylesheet" href="Death_Number_Styles.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+    <title>Test DEATH NUMBER</title>
+  </head>
+  <body>
+    <div id="Start-page">
+      <p id="title">DEATH NUMBER</p>
+
+      <div id="name_players">
+        <p class="t">Type your names:</p>
+        <div id="npb1">
+          <input
+            type="text"
+            id="nboxplayer1"
+            value="Player 1"
+            oninput="namelog1()"
+          />
+          <p class="p1name">Welcome player1</p>
+        </div>
+
+        <div id="npb2">
+          <input
+            type="text"
+            id="nboxplayer2"
+            value="Player 2"
+            oninput="namelog2()"
+          />
+          <p class="p2name">Welcome player2</p>
+        </div>
+      </div>
+      <div id="condition_box">
+        <button id="cd_title" onclick="showCond()">
+          Game Description & Rules:
+        </button>
+        <ul id="condition_description" class="hide">
+          <li>
+            Highest number from the first roll determines the starting player.
+          </li>
+          <li>A random number [0-20] sets the death number.</li>
+          <li>
+            Players take turns rolling dice and deciding to increase or decrease
+            the displayed number.
+          </li>
+          <li>The player who reaching the death number looses!</li>
+          <li>
+            I Understand the game <input type="checkbox" id="condition_check" />
+          </li>
+        </ul>
+        <button id="stBtn" class="hide" onclick="start()">Start!</button>
+      </div>
+    </div>
+
+    <div id="Game_prep" class="hide">
+      <p id="gptitle">Game Preparation</p>
+      <div class="btn">
+        <button id="roll1" onclick="roll1()">Roll</button>
+
+        <button id="restart" onclick="messE()">Restart!</button>
+      </div>
+
+      <div class="pboxcont">
+        <div class="playerbox" id="playerbox1">
+          <image id="pb1img" src="Images/dc1.png" alt="Dice side"></image>
+          <p class="p1">Player 1</p>
+        </div>
+        <div class="playerbox" id="playerbox2">
+          <image id="pb2img" src="Images/dc1.png" alt="Dice side"></image>
+          <p class="p2">Player 2</p>
+        </div>
+      </div>
+
+      <div id="windesc" class="hide">
+        <div>
+          <p id="toStart">Death Number Chosen!</p>
+          <p id="roll1-winner"></p>
+        </div>
+        <button id="continue" class="hide" onclick="Ctnue()">Continue</button>
+      </div>
+    </div>
+
+    <div id="Ct_page" class="hide">
+      <div>
+        <p id="DN">0</p>
+
+        <div class="btn">
+          <button id="incr" class="hide" onclick="Incr()">Increase</button>
+          <button id="restart" onclick="messE()">Restart!</button>
+          <button id="decrs" class="hide" onclick="Decr()">Decrease</button>
+        </div>
+      </div>
+
+      <div class="pboxcont">
+        <div class="playerbox">
+          <button class="imbt" id="ddn1" onclick="rolldc()">
+            <image id="dimg1" src="Images/dc1.png" alt="Dice side"></image>
+          </button>
+          <p class="p1">Player 1</p>
+        </div>
+        <div class="playerbox">
+          <button class="imbt" id="ddn2" onclick="rolldc()">
+            <image id="dimg2" src="Images/dc1.png" alt="Dice side"></image>
+          </button>
+          <p class="p2">Player 2</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="Result" class="hide">
+      <img
+        id="skull"
+        src="Images/crossing_bones_skull_vector_logo-removebg.png"
+        alt="Skull"
+      />
+      <p id="result"></p>
+      <button id="restart" onclick="messE()">Restart!</button>
+    </div>
+    <script src="Death_Number.js" charset="UTF-8"></script>
+  </body>
+</html>
